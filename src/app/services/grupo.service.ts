@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GrupoService {
-  private baseUrl = "htpp:localhost:5000/api/grupo";
+  private baseUrl = "htpp:localhost:5001/api/Equipe/";
 
   constructor(private http: HttpClient) { }
 
   list(): Observable<Grupo[]> {
-    return this.http.get<Grupo[]>(`${this.baseUrl}list`);
+    return this.http.get<Grupo[]>(`${this.baseUrl}List`);
   }
 }

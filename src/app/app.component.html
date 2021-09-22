@@ -1,5 +1,8 @@
-<ol>
-    <li *ngfor="let grupo of grupos">
-        {{ grupo.nome }}
-    </li>
-</ol>
+<nav>
+    <ul>
+        <li> <a routerLink="/usuario">Lista de usuários</a></li>
+    </ul>
+</nav>
+<div>
+    <router-outlet></router-outlet>
+</div>

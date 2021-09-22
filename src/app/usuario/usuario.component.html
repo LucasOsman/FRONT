@@ -1,0 +1,18 @@
+<h1>Usuários</h1>
+
+<table *ngIf="usuarios">
+    <thead>
+        <td>Nome</td>
+        <td>Login</td>
+        <td>Data Cadastro</td>
+        <td>Data Atualização</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of usuarios">
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.login}}</td>
+            <td>{{usuario.dataCadastro}}</td>
+            <td>{{usuario.dataAtualizacao}}</td>
+        </tr>
+    </tbody>
+</table>

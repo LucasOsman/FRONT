@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GrupoService } from './services/grupo.service';
-import { Grupo } from "./models/Grupo";
+import { ClienteService } from './services/cliente.service';
+import { Cliente } from './models/Cliente';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +8,14 @@ import { Grupo } from "./models/Grupo";
   styles: []
 })
 export class AppComponent implements OnInit {
-  grupos: Grupo[] = [];
-  constructor(private service: GrupoService){}
+  clientes: Cliente[] = [];
+
+  constructor(private service: ClienteService){}  
 
   ngOnInit(): void {
-    this.service.list().subscribe(grupos => {
-      this.grupos = grupos;
-      console.log(grupos);
+    this.service.list().subscribe(clientes => {
+      this.clientes = clientes;
+      console.log(clientes);
     });
   }
 }
