@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PostUsuarioRequest, Usuario } from "../models/Usuario";
+import { GetById, PostUsuarioRequest, PutUsuarioRequest, Usuario } from "../models/Usuario";
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,13 @@ export class UsuarioService {
 
   create(request: PostUsuarioRequest) : Observable<PostUsuarioRequest>{
     return this.http.post<PostUsuarioRequest>(`${this.baseUrl}Post`, request);
+  }
+
+  getById(id: string): Observable<GetById> {
+    return this.http.post<GetById>(`${this.baseUrl}GetById`, id);
+  }
+
+  updateUsuario(request: PutUsuarioRequest) : Observable<PutUsuarioRequest>{
+    return this.http.put<PutUsuarioRequest>(`${this.baseUrl}Put`, request);
   }
 }

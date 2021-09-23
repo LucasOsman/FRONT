@@ -10,3 +10,13 @@ export interface PostUsuarioRequest {
     senha: string;
     nome: string;
 }
+
+export interface PutUsuarioRequest {
+    id: number;
+    senha: string;
+    nome: string;
+}
+
+export interface GetById {
+    id: number;
+}
