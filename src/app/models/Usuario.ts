@@ -4,3 +4,9 @@ export interface Usuario {
     dataCadastro: Date;
     dataAtualizacao: Date;
 }
+
+export interface PostUsuarioRequest {
+    login: string;
+    senha: string;
+    nome: string;
+}

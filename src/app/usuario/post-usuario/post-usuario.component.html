@@ -1,0 +1,18 @@
+<h2> Criar usuário</h2>
+<div>
+   <label> Nome:
+   <input placeholder="Insira o nome" [(ngModel)]="request.nome">
+   </label>
+   <br>
+   <label> Login:
+   <input placeholder="Insira o login" [(ngModel)]="request.login">
+   </label>  
+   <br>
+   <label> Senha:
+   <input placeholder="Insira o senha" [(ngModel)]="request.senha">
+   </label>  
+   <br>
+   <button (click)="save()">Salvar</button>
+</div>
+
+<div *ngIf="retorno"><h3>Cadastrado com sucesso!</h3></div>
