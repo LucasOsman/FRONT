@@ -3,16 +3,15 @@
    <label> Nome:
    <input placeholder="Insira o nome" [(ngModel)]="request.nome">
    </label>
-   <br>
+   <br><br>
    <label> Login:
    <input placeholder="Insira o login" [(ngModel)]="request.login">
    </label>  
-   <br>
+   <br><br>
    <label> Senha:
    <input placeholder="Insira o senha" [(ngModel)]="request.senha">
    </label>  
-   <br>
+   <br><br>
    <button (click)="save()">Salvar</button>
 </div>
-
 <div *ngIf="retorno"><h3>Cadastrado com sucesso!</h3></div>
