@@ -8,13 +8,29 @@ import { UsuarioService } from '../services/usuario.service';
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
-  public usuarios: Usuario[] = [];
+  usuarios: any;
+  colunasExibidas: String[] = [
+    "login",
+    "nome",
+    "dataCadastro",
+    "dataAtualizacao"
+];
   constructor(private usuarioService: UsuarioService){}  
   
 
   ngOnInit(): void{
+    this.list();
+  };
+
+  list(): void {
     this.usuarioService.list()
-    .subscribe(res => this.usuarios = res);
-      console.log(this.usuarios);
+      .subscribe(
+        data => {
+          this.usuarios = data.data;
+        },
+        error => {
+          console.log(error);
+        });
   }
+  
 }
